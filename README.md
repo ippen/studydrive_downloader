@@ -2,7 +2,7 @@
 
 This is a simple web application and Python library for downloading files from StudyDrive, a platform for sharing study materials and documents. With this tool, you can easily download study materials and generate preview links for documents hosted on StudyDrive.
 
-## Notice:
+## Notice
 Since 21. November 2023 the core functionality on generating the PDF file link via the file_preview url exploit is no longer working.
 
 ## Getting Started

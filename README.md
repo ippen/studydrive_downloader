@@ -5,6 +5,8 @@ This is a simple web application and Python library for downloading files from S
 ## Notice
 Since 21. November 2023 the core functionality on generating the PDF file link via the file_preview url exploit is no longer working.
 
+RIP: https://studydrivedownloader.pythonanywhere.com
+
 ## Getting Started
 
 Follow the instructions below to get started with the StudyDrive Downloader:

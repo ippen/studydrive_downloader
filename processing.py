@@ -3,7 +3,7 @@ import fcntl
 
 
 def get_lol_url(url: str):
-    return url.replace('net', 'lol')
+    return url.replace('.net/', '.lol/')
 
 
 def ensure_https_www_prefix(url):

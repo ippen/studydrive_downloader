@@ -1,60 +1,9 @@
-import requests
 import re
 import fcntl
 
 
-def get_file_preview_url(url):
-    # Send an HTTP GET request to the website
-    response = requests.get(url)
-
-    # Check if the request was successful (status code 200)
-    if response.status_code == 200:
-        # Access the HTML source code of the website
-        html_source = response.text
-        # Use regular expressions to extract the "file_preview" URL
-        html_source = html_source.replace('\n', '')
-        pattern = r'"file_preview":"(.*?)"'
-        matches = re.search(pattern, html_source)
-
-        if matches:
-            file_preview_url = matches.group(1)
-            # Replace backslashes with forward slashes and "teaser" with "original"
-            file_preview_url = file_preview_url.replace('\\', '')
-
-            if requests.get(file_preview_url.replace('teaser', 'original')).status_code == 200:
-                url_result = file_preview_url.replace('teaser', 'original')
-
-            elif requests.get(file_preview_url.replace('teaser', 'converted')).status_code == 200:
-                url_result = file_preview_url.replace('teaser', 'converted')
-            else:
-                # Use regex to find the value of "filename"
-                pattern_filename = r'"filename":\s*"([^"]+)"'
-                match_filename = re.search(pattern_filename, html_source)
-                if match_filename:
-                    # Extract the value of "filename"
-                    filename_value = match_filename.group(1)
-                    filename_value = filename_value.encode('utf-8').decode('unicode_escape').replace(' ', '%20')
-
-                    # Define the regex pattern
-                    pattern_pdf_id = r'\d+\.pdf'
-                    # Replace the matched pattern with filename_value
-
-                    file_url_with_name = re.sub(pattern_pdf_id, filename_value, file_preview_url)
-
-                if requests.get(file_url_with_name.replace('teaser', 'original')).status_code == 200:
-                    url_result = file_url_with_name.replace('teaser', 'original')
-                elif requests.get(file_url_with_name.replace('teaser', 'converted')).status_code == 200:
-                    url_result = file_url_with_name.replace('teaser', 'converted')
-                else:
-                    url_result = -1
-
-
-            return url_result
-
-        else:
-            return None
-    else:
-        return None
+def get_lol_url(url: str):
+    return url.replace('net', 'lol')
 
 
 def ensure_https_www_prefix(url):

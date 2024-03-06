@@ -4,9 +4,9 @@ This is a simple web application and Python library for downloading files from S
 
 Website: https://studydrivedownloader.pythonanywhere.com
 
-## Update 3.03.2024
+## Update 06.03.2024
 
-Since 3.03.2024 the websites works again! Thanks to [Curve](https://github.com/sponsors/Curve) for his functionality from [studydrive.lol](https://www.studydrive.lol) !
+Regrettably, due to legal constraints, it has become necessary to render this website non-functional. This compromise was reached to prevent Studydrive from pursuing legal actions. Although this marks the end of the website's functionality, I am grateful for the kind exchange I had with them on LinkedIn. I extend my heartfelt thanks to everyone who supported this website and sent encouraging messages in the past. Your support has been deeply appreciated.
 
 ## Getting Started
 
